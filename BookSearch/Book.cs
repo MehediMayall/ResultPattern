@@ -35,11 +35,10 @@ public sealed class Book
         {
             if (books == null)
             {            
-                using(StreamReader sr = new StreamReader("data.json"))
-                {
-                    string jsonString = sr.ReadToEnd();
-                    this.books = JsonSerializer.Deserialize<List<Book>>(jsonString);
-                }
+                Book book1 = new("Dune","Frank Herbert",1965,"Dune","USA","9780441013593");
+                Book book2 = new("Foundation","Isaac Asimov",1961,"Foundation","USA","9780553293357");
+                books = new List<Book>();
+                books.AddRange([book1,book2]);
             }
             return books;
         }
@@ -67,10 +66,14 @@ public sealed class Book
 
 
 
-    public Result<List<Book>> searchBook(string bookname)
+    public Result<List<Book>> searchBook(string searchText)
     {
-        if(string.IsNullOrEmpty(bookname)) return Result<List<Book>>.Failure(BookExceptions.BookSearchTextIsEmpty());
-        var foundBooks =  Books.Where(book => book.Bookname.Contains(bookname)).ToList();
+        if(string.IsNullOrEmpty(searchText)) return Result<List<Book>>.Failure(BookExceptions.BookSearchTextIsEmpty());
+        var foundBooks =  Books.Where(book => book.Bookname.Contains(searchText) || 
+            book.Country.Contains(searchText)
+        ).ToList();
+
+        if (foundBooks.Count == 0) return Result<List<Book>>.Failure(BookExceptions.NoBookFound());
 
         return Result<List<Book>>.Success(foundBooks);
     }
