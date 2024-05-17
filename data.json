@@ -1,0 +1,82 @@
+[
+    {
+      "name": "Dune",
+      "author": "Frank Herbert",
+      "year": "1965",
+      "bookname": "Dune",
+      "country": "United States",
+      "isbn": "9780441013593"
+    },
+    {
+      "name": "Foundation",
+      "author": "Isaac Asimov",
+      "year": "1951",
+      "bookname": "Foundation",
+      "country": "United States",
+      "isbn": "9780553293357"
+    },
+    {
+      "name": "1984",
+      "author": "George Orwell",
+      "year": "1949",
+      "bookname": "Nineteen Eighty-Four",
+      "country": "United Kingdom",
+      "isbn": "9780451524935"
+    },
+    {
+      "name": "Brave New World",
+      "author": "Aldous Huxley",
+      "year": "1932",
+      "bookname": "Brave New World",
+      "country": "United Kingdom",
+      "isbn": "9780060850524"
+    },
+    {
+      "name": "The Hitchhiker's Guide to the Galaxy",
+      "author": "Douglas Adams",
+      "year": "1979",
+      "bookname": "The Hitchhiker's Guide to the Galaxy",
+      "country": "United Kingdom",
+      "isbn": "9780345391803"
+    },
+    {
+      "name": "Neuromancer",
+      "author": "William Gibson",
+      "year": "1984",
+      "bookname": "Sprawl Trilogy",
+      "country": "Canada",
+      "isbn": "9780441569595"
+    },
+    {
+      "name": "Ender's Game",
+      "author": "Orson Scott Card",
+      "year": "1985",
+      "bookname": "Ender's Game",
+      "country": "United States",
+      "isbn": "9780812550702"
+    },
+    {
+      "name": "The War of the Worlds",
+      "author": "H.G. Wells",
+      "year": "1898",
+      "bookname": "The War of the Worlds",
+      "country": "United Kingdom",
+      "isbn": "9781853260230"
+    },
+    {
+      "name": "Snow Crash",
+      "author": "Neal Stephenson",
+      "year": "1992",
+      "bookname": "Snow Crash",
+      "country": "United States",
+      "isbn": "9780553380958"
+    },
+    {
+      "name": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "year": "1953",
+      "bookname": "Fahrenheit 451",
+      "country": "United States",
+      "isbn": "9781451673319"
+    }
+  ]
