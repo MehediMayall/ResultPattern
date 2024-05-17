@@ -37,4 +37,32 @@ public class BookTest
             result.Error.Description.Should().NotBeNullOrEmpty();
         }
     }
+
+    [Fact]
+    public void SearchBook_ShouldReturn_NotFoundMessage()
+    {
+        // Arrange
+        Book book = Book.Create();
+
+        // Act
+        var result = book.searchBook("BD");
+
+        // Assert
+        result.Error.Should().NotBeNull();
+        result.Error.Description.Should().Be(BookExceptions.NoBookFound().Description);
+    }
+    
+    [Fact]
+    public void SearchBook_ShouldReturn_BookSearchTextIsEmpty()
+    {
+        // Arrange
+        Book book = Book.Create();
+
+        // Act
+        var result = book.searchBook("");
+
+        // Assert
+        result.Error.Should().NotBeNull();
+        result.Error.Description.Should().Be(BookExceptions.BookSearchTextIsEmpty().Description);
+    }
 }
