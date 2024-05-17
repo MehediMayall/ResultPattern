@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Linq;
 
-namespace ResultPattern;
+namespace BookSearch;
 
 public sealed class Book
 {

@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BookSearch\ResultPattern.csproj" />
+    <ProjectReference Include="..\BookSearch\BookSearch.csproj" />
   </ItemGroup>
 
 </Project>

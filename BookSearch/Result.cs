@@ -1,4 +1,4 @@
-namespace ResultPattern;
+namespace BookSearch;
 
 public sealed class Result<T> where T : class
 {

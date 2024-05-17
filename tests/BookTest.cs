@@ -1,5 +1,5 @@
 ﻿namespace BookSearch.Test;
-using ResultPattern;
+using BookSearch;
 using FluentAssertions;
 
 
