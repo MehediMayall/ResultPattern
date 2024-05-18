@@ -11,7 +11,7 @@ public class BookTest
     [InlineData("", false)]
     [InlineData("USA", true)]
     [InlineData("test", false)]
-    [InlineData(" ", false)]
+    [InlineData(" ", true)]
     [InlineData("0", false)]
     [InlineData(null, false)]
     public void SearchBook_ShouldReturnGivenOutput(string SearchText, bool ExpectedResult)
@@ -49,7 +49,7 @@ public class BookTest
 
         // Assert
         result.Error.Should().NotBeNull();
-        result.Error.Description.Should().Be(BookExceptions<Book>.NoBookFound().Description);
+        result.Error.Description.Should().Be(BookExceptions<Book>.NoBookFound("BD").Description);
     }
     
     [Fact]

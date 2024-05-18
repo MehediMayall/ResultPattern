@@ -37,9 +37,10 @@ public sealed class Book
     private List<Book> loadBook()
     {
         Book book1 = new("Dune","Frank Herbert",1965,"Dune","USA","9780441013593");
-        Book book2 = new("Foundation","Isaac Asimov",1961,"Foundation","USA","9780553293357");
-        books = new List<Book>();
-        books.AddRange([book1,book2]);
+        Book book2 = new("The War of the Worlds","H.G. Wells",1898,"The War of the Worlds","United Kindom","9781853260230");
+        Book book3 = new("Foundation","Isaac Asimov",1961,"Foundation","USA","9780553293357");
+        Book book4 = new("Neuromancer","William Gibson",1984,"Sprawl Trilogy","Canada","9780441569595");
+        books = new List<Book>([book1,book2, book3, book4]);
         return books;
     }
 
@@ -72,7 +73,7 @@ public sealed class Book
             book.Country.Contains(searchText)
         ).ToList();
 
-        if (foundBooks.Count == 0) return Result<List<Book>>.Failure(BookExceptions<List<Book>>.NoBookFound());
+        if (foundBooks.Count == 0) return BookExceptions<List<Book>>.NoBookFound(searchText);
 
         return Result<List<Book>>.Success(foundBooks);
     }
