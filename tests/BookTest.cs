@@ -49,7 +49,7 @@ public class BookTest
 
         // Assert
         result.Error.Should().NotBeNull();
-        result.Error.Description.Should().Be(BookExceptions.NoBookFound().Description);
+        result.Error.Description.Should().Be(BookExceptions<Book>.NoBookFound().Description);
     }
     
     [Fact]
@@ -63,6 +63,6 @@ public class BookTest
 
         // Assert
         result.Error.Should().NotBeNull();
-        result.Error.Description.Should().Be(BookExceptions.BookSearchTextIsEmpty().Description);
+        result.Error.Description.Should().Be(BookExceptions<Book>.BookSearchTextIsEmpty().Description);
     }
 }

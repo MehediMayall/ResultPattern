@@ -31,17 +31,16 @@ public sealed class Book
 
     public List<Book> Books
     {
-        get
-        {
-            if (books == null)
-            {            
-                Book book1 = new("Dune","Frank Herbert",1965,"Dune","USA","9780441013593");
-                Book book2 = new("Foundation","Isaac Asimov",1961,"Foundation","USA","9780553293357");
-                books = new List<Book>();
-                books.AddRange([book1,book2]);
-            }
-            return books;
-        }
+        get{return books ?? loadBook();}
+    }
+
+    private List<Book> loadBook()
+    {
+        Book book1 = new("Dune","Frank Herbert",1965,"Dune","USA","9780441013593");
+        Book book2 = new("Foundation","Isaac Asimov",1961,"Foundation","USA","9780553293357");
+        books = new List<Book>();
+        books.AddRange([book1,book2]);
+        return books;
     }
 
 
@@ -68,12 +67,12 @@ public sealed class Book
 
     public Result<List<Book>> searchBook(string searchText)
     {
-        if(string.IsNullOrEmpty(searchText)) return Result<List<Book>>.Failure(BookExceptions.BookSearchTextIsEmpty());
+        if(string.IsNullOrEmpty(searchText)) return BookExceptions<List<Book>>.BookSearchTextIsEmpty();
         var foundBooks =  Books.Where(book => book.Bookname.Contains(searchText) || 
             book.Country.Contains(searchText)
         ).ToList();
 
-        if (foundBooks.Count == 0) return Result<List<Book>>.Failure(BookExceptions.NoBookFound());
+        if (foundBooks.Count == 0) return Result<List<Book>>.Failure(BookExceptions<List<Book>>.NoBookFound());
 
         return Result<List<Book>>.Success(foundBooks);
     }
